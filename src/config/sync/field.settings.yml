@@ -1,0 +1,4 @@
+_core:
+  default_config_hash: yC1VrNt3it8LmbGTO8cGhgNqRgN3ikhqun5dCWFVCAA
+langcode: fr
+purge_batch_size: 50

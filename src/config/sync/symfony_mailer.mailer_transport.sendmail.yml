@@ -1,0 +1,12 @@
+uuid: cadad20f-120b-4d68-a299-b940e7c587c5
+langcode: fr
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: JlhtZGzrKvb_1TFIVW-o2lEEoeutUxHkdpZ1WzIkJMY
+id: sendmail
+label: Sendmail
+plugin: sendmail
+configuration:
+  query:
+    command: ''

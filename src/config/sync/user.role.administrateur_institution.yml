@@ -1,0 +1,108 @@
+uuid: 5f6d49e3-573d-4d6a-9e7a-950494ff8de2
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.basic
+    - media.type.audio
+    - media.type.document
+    - media.type.image
+    - media.type.remote_video
+    - media.type.video
+    - node.type.article
+    - node.type.page
+    - taxonomy.vocabulary.tags
+  module:
+    - block_content
+    - comment
+    - contact
+    - field_ui
+    - file
+    - image
+    - locale
+    - media
+    - node
+    - redirect
+    - search
+    - taxonomy
+    - update
+    - webform
+id: administrateur_institution
+label: 'Administrateur institution'
+weight: 4
+is_admin: null
+permissions:
+  - 'access content overview'
+  - 'access files overview'
+  - 'access media overview'
+  - 'access user profiles'
+  - 'administer comment form display'
+  - 'administer comments'
+  - 'administer contact forms'
+  - 'administer display modes'
+  - 'administer image styles'
+  - 'administer media'
+  - 'administer media types'
+  - 'administer node form display'
+  - 'administer redirect settings'
+  - 'administer redirects'
+  - 'administer search'
+  - 'administer taxonomy'
+  - 'administer taxonomy_term display'
+  - 'administer taxonomy_term form display'
+  - 'administer user display'
+  - 'create article content'
+  - 'create audio media'
+  - 'create document media'
+  - 'create image media'
+  - 'create media'
+  - 'create page content'
+  - 'create remote_video media'
+  - 'create terms in tags'
+  - 'create video media'
+  - 'create webform'
+  - 'delete any article content'
+  - 'delete any audio media'
+  - 'delete any document media'
+  - 'delete any image media'
+  - 'delete any media'
+  - 'delete any page content'
+  - 'delete any remote_video media'
+  - 'delete any video media'
+  - 'delete media'
+  - 'delete own article content'
+  - 'delete own audio media'
+  - 'delete own document media'
+  - 'delete own image media'
+  - 'delete own page content'
+  - 'delete own remote_video media'
+  - 'delete own video media'
+  - 'edit any article content'
+  - 'edit any audio media'
+  - 'edit any basic block content'
+  - 'edit any document media'
+  - 'edit any image media'
+  - 'edit any page content'
+  - 'edit any remote_video media'
+  - 'edit any video media'
+  - 'edit own article content'
+  - 'edit own audio media'
+  - 'edit own document media'
+  - 'edit own image media'
+  - 'edit own page content'
+  - 'edit own remote_video media'
+  - 'edit own video media'
+  - 'revert article revisions'
+  - 'revert page revisions'
+  - 'translate interface'
+  - 'update any media'
+  - 'update media'
+  - 'use advanced search'
+  - 'view all media revisions'
+  - 'view article revisions'
+  - 'view media'
+  - 'view own unpublished content'
+  - 'view own unpublished media'
+  - 'view page revisions'
+  - 'view update notifications'
+  - 'view user email addresses'

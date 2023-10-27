@@ -1,0 +1,14 @@
+_core:
+  default_config_hash: Ys5M79wZXx_k_rtFf65fpICqe7yH3h8iuxWMMB0utyI
+langcode: fr
+map:
+  'no': nb
+  pt: pt-pt
+  zh: zh-hans
+  zh-tw: zh-hant
+  zh-hk: zh-hant
+  zh-mo: zh-hant
+  zh-cht: zh-hant
+  zh-cn: zh-hans
+  zh-sg: zh-hans
+  zh-chs: zh-hans

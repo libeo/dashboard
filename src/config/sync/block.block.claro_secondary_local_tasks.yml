@@ -1,0 +1,22 @@
+uuid: ab127a1a-a820-4b7d-be3b-39fd633416aa
+langcode: fr
+status: true
+dependencies:
+  theme:
+    - claro
+_core:
+  default_config_hash: KhkwfgE_3sEuHzVKvIxTOeAN4iV9l-l2FmbBsWErrrY
+id: claro_secondary_local_tasks
+theme: claro
+region: pre_content
+weight: 0
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Onglets secondaires'
+  label_display: '0'
+  provider: core
+  primary: false
+  secondary: true
+visibility: {  }

@@ -1,0 +1,51 @@
+uuid: 4eab5909-26ff-472c-872c-ef1eff47debc
+langcode: fr
+status: true
+dependencies:
+  config:
+    - filter.format.basic_html
+    - node.type.article
+    - node.type.page
+    - taxonomy.vocabulary.tags
+  module:
+    - comment
+    - contextual
+    - file
+    - filter
+    - node
+    - path
+    - system
+    - taxonomy
+    - toolbar
+    - tour
+_core:
+  default_config_hash: 1YNfBfxyOOD5SzyCeZzdX9CLuF2QfGOuNsgESvuHLSY
+id: content_editor
+label: 'Éditeur de contenu'
+weight: 2
+is_admin: false
+permissions:
+  - 'access administration pages'
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access files overview'
+  - 'access toolbar'
+  - 'access tour'
+  - 'administer url aliases'
+  - 'create article content'
+  - 'create page content'
+  - 'create terms in tags'
+  - 'create url aliases'
+  - 'delete article revisions'
+  - 'delete own article content'
+  - 'delete own page content'
+  - 'delete page revisions'
+  - 'edit own article content'
+  - 'edit own comments'
+  - 'edit own page content'
+  - 'edit terms in tags'
+  - 'revert all revisions'
+  - 'use text format basic_html'
+  - 'view all revisions'
+  - 'view own unpublished content'
+  - 'view the administration theme'

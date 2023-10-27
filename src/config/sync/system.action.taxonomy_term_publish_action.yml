@@ -1,0 +1,13 @@
+uuid: b9cc2a7f-3334-4267-8688-00dcf89e7961
+langcode: fr
+status: true
+dependencies:
+  module:
+    - taxonomy
+_core:
+  default_config_hash: 49eDdRA_Kf1bjXTL7vrw_lir-bsrjvTZRce6d1sQhzM
+id: taxonomy_term_publish_action
+label: 'Publier le terme de taxonomie'
+type: taxonomy_term
+plugin: 'entity:publish_action:taxonomy_term'
+configuration: {  }

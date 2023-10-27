@@ -1,0 +1,14 @@
+uuid: 200ad15b-aaf4-433e-9eb5-ebfb82d8ff36
+langcode: fr
+status: true
+dependencies:
+  config:
+    - user.role.administrateur_institution
+  module:
+    - user
+id: user_remove_role_action.administrateur_institution
+label: 'Enlever le rôle Administrateur institution des utilisateurs sélectionnés'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: administrateur_institution

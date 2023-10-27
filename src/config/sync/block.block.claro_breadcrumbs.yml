@@ -1,0 +1,22 @@
+uuid: 70176e0d-3cc5-45ed-8519-e1b22a4ba7dc
+langcode: fr
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - claro
+_core:
+  default_config_hash: dq4OuY-kbdkIgY8EKGpelrdPSRkTm41ar1aXc5cwQy0
+id: claro_breadcrumbs
+theme: claro
+region: breadcrumb
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: "Fils d'ariane"
+  label_display: '0'
+  provider: system
+visibility: {  }

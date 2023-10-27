@@ -1,0 +1,65 @@
+uuid: 20af30c7-d5a3-4843-bf9c-d0d1844d8460
+langcode: fr
+status: true
+dependencies:
+  enforced:
+    module:
+      - webform
+_core:
+  default_config_hash: j8hGGPgnxS_DJlFPZ66koaDzMRaiFHULR-NbNqhUbYs
+id: state_names
+label: 'State names'
+category: Geographic
+likert: false
+options: |
+  Alabama: Alabama
+  Alaska: Alaska
+  Arizona: Arizona
+  Arkansas: Arkansas
+  California: California
+  Colorado: Colorado
+  Connecticut: Connecticut
+  Delaware: Delaware
+  'District of Columbia': 'District of Columbia'
+  Florida: Florida
+  Georgia: Georgia
+  Hawaii: Hawaii
+  Idaho: Idaho
+  Illinois: Illinois
+  Indiana: Indiana
+  Iowa: Iowa
+  Kansas: Kansas
+  Kentucky: Kentucky
+  Louisiana: Louisiana
+  Maine: Maine
+  Maryland: Maryland
+  Massachusetts: Massachusetts
+  Michigan: Michigan
+  Minnesota: Minnesota
+  Mississippi: Mississippi
+  Missouri: Missouri
+  Montana: Montana
+  Nebraska: Nebraska
+  Nevada: Nevada
+  'New Hampshire': 'New Hampshire'
+  'New Jersey': 'New Jersey'
+  'New Mexico': 'New Mexico'
+  'New York': 'New York'
+  'North Carolina': 'North Carolina'
+  'North Dakota': 'North Dakota'
+  Ohio: Ohio
+  Oklahoma: Oklahoma
+  Oregon: Oregon
+  Pennsylvania: Pennsylvania
+  'Rhode Island': 'Rhode Island'
+  'South Carolina': 'South Carolina'
+  'South Dakota': 'South Dakota'
+  Tennessee: Tennessee
+  Texas: Texas
+  Utah: Utah
+  Vermont: Vermont
+  Virginia: Virginia
+  Washington: Washington
+  'West Virginia': 'West Virginia'
+  Wisconsin: Wisconsin
+  Wyoming: Wyoming

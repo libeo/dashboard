@@ -1,0 +1,15 @@
+uuid: c38d77bc-017a-460e-9c38-c461c5745ee6
+langcode: fr
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: fcrP6507WG_bmBVPRon9HQFejKvXNkHeq5zb4ae6FW8
+id: _
+configuration:
+  mailer_inline_css: {  }
+  email_theme:
+    theme: _default
+  mailer_url_to_absolute: {  }
+  mailer_wrap_and_convert:
+    plain: false
+    swiftmailer: false

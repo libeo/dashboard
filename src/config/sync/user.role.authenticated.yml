@@ -1,0 +1,28 @@
+uuid: 5269367f-87a5-40fc-be2e-fcad58923d55
+langcode: fr
+status: true
+dependencies:
+  config:
+    - filter.format.webform_default
+  module:
+    - comment
+    - contact
+    - filter
+    - search
+    - shortcut
+    - system
+_core:
+  default_config_hash: px9LJ_smXLndHwTW_i2O9nK1gFyhjdd7Y3Ur4jbkjbs
+id: authenticated
+label: 'Utilisateur authentifié'
+weight: 1
+is_admin: false
+permissions:
+  - 'access comments'
+  - 'access content'
+  - 'access shortcuts'
+  - 'access site-wide contact form'
+  - 'post comments'
+  - 'search content'
+  - 'skip comment approval'
+  - 'use text format webform_default'

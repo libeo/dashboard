@@ -1,0 +1,16 @@
+uuid: 1e51606d-0e03-4c19-83a6-2bda97e16cb5
+langcode: fr
+status: true
+dependencies:
+  config:
+    - user.role.content_editor
+  module:
+    - user
+_core:
+  default_config_hash: '-126ZpZJK14qfCiacLboZyNbfRpCbx05__Bzddqlgto'
+id: user_remove_role_action.content_editor
+label: 'Remove the Content editor role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: content_editor

@@ -1,0 +1,8 @@
+_core:
+  default_config_hash: Iy8ODwzHHn8YvWwW-HCOXIfZ9wPO1E5EWwdn14L9KHg
+langcode: fr
+links:
+  -
+    path: /
+    priority: '1.0'
+    changefreq: daily

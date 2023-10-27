@@ -1,0 +1,104 @@
+<div class="dashboard__items-wrapper" id="dashboard__items__wrapper">
+  {% if not roles_defined %}
+    <div role="contentinfo" class="messages messages--warning">
+      Vous n'avez pas accès à cette page. <br/><br/>
+      <a href="/user/login" class="btn is-secondary">Se connecter</a>
+    </div>
+  {% else %}
+    {% if items_content|length %}
+      <div>
+        <div class="fieldset-wrapper">
+          <h2 id="content_items">Contenus</h2>
+          <ul class="dashboard__items row clearfix">
+            {% for dashboard_item in items_content %}
+              <li class="dashboard__item dashboard__item-type--{{ dashboard_item.type }}">
+                <a href="{{ dashboard_item.url }}" class="dashboard__item-inner dashboard__wrapper-link">
+                  <h3 class="page-title dashboard__item-title">
+                    {{ dashboard_item.title }}
+                  </h3>
+                  <p class="dashboard__item-description">
+                    {{ dashboard_item.description|raw }}
+                  </p>
+                  <button class="button button--action button--primary dashboard__item-button button button-border-primary-color round">
+                    {{ 'Gérer' }}
+                  </button>
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    {% endif %}
+
+    {% if items_medias|length %}
+      <div>
+        <div class="fieldset-wrapper">
+          <h2 id="content_items">Medias</h2>
+          <ul class="dashboard__items row clearfix">
+            {% for dashboard_item in items_medias %}
+              <li class="dashboard__item dashboard__item-type--{{ dashboard_item.type }}">
+                <a href="{{ dashboard_item.url }}" class="dashboard__item-inner dashboard__wrapper-link">
+                  <h3 class="page-title dashboard__item-title">
+                    {{ dashboard_item.title }}
+                  </h3>
+                  <p class="dashboard__item-description">
+                    {{ dashboard_item.description|raw }}
+                  </p>
+                  <button class="button button--action button--primary dashboard__item-button button button-border-primary-color round">
+                    {{ 'Gérer' }}
+                  </button>
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    {% endif %}
+
+    {% if items_others|length %}
+      <div>
+        <div class="fieldset-wrapper">
+          <h2 id="other_items">Configuration</h2>
+          <ul class="dashboard__items row clearfix">
+            {% for dashboard_item in items_others %}
+              <li class="dashboard__item">
+                <a href="{{ dashboard_item.url }}" class="dashboard__item-inner dashboard__wrapper-link">
+                  <h3 class="page-title dashboard__item-title">
+                    {{ dashboard_item.title }}
+                  </h3>
+                  <p class="dashboard__item-description">
+                    {{ dashboard_item.description|raw }}
+                  </p>
+                  <button class="button button--action button--primary dashboard__item-button button button-border-primary-color round">
+                    {{ 'Gérer' }}
+                  </button>
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    {% endif %}
+    {% if items_shortcut %}
+      <fieldset>
+        <legend>Raccourcis</legend>
+        <div class="fieldset-wrapper">
+          <ul class="dashboard__items row clearfix">
+            {% for dashboard_item in items_shortcut %}
+              <li class="dashboard__item">
+                <a href="{{ dashboard_item.url }}" class="dashboard__item-inner dashboard__wrapper-link">
+                  <h3 class="page-title dashboard__item-title">
+                    {{ dashboard_item.title }}
+                  </h3>
+                  <button class="button button--action button--primary dashboard__item-button button button-border-primary-color round">
+                    {{ 'Gérer' }}
+                  </button>
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </fieldset>
+    {% endif %}
+  {% endif %}
+</div>

@@ -1,0 +1,27 @@
+uuid: b764449b-c5dd-4c96-bdd2-f53fdd9566a5
+langcode: fr
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - dashboard_admin
+_core:
+  default_config_hash: yxY99H3wUdSaRNAMKAWFKWWGWUEL8U4Grb28jBNHR5E
+id: dashboard_admin_main_menu
+theme: dashboard_admin
+region: header
+weight: 0
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Navigation principale'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 2
+  expand_all_items: true
+visibility: {  }

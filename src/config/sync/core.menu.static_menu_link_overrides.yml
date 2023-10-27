@@ -1,0 +1,10 @@
+_core:
+  default_config_hash: ZaIR51Mo59ebS-29pvWBOc_Ms-1HUWvTpwAyP5l5C9M
+langcode: fr
+definitions:
+  contact__site_page:
+    menu_name: footer
+    parent: ''
+    weight: 0
+    expanded: false
+    enabled: true

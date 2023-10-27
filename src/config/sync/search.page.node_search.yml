@@ -1,0 +1,15 @@
+uuid: 49527636-08a6-49ae-8ffa-e624d34cc346
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: 4CSmckeO_5kUSJELbwo-BqYy2goc9VC1QoQDJVT9BM4
+id: node_search
+label: Contenu
+path: node
+weight: -10
+plugin: node_search
+configuration:
+  rankings: {  }

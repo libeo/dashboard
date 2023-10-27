@@ -1,0 +1,14 @@
+uuid: 36ea58ea-c38b-4ed5-9d2a-45a07b99911f
+langcode: fr
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: oP4jRQLXjyuLlaHFG03_wTJVbLzG-rl_FOo7hu7yfUg
+id: feedback
+label: 'Retours utilisateurs sur le site web'
+recipients:
+  - admin@example.com
+reply: ''
+weight: 0
+message: 'Votre message a été envoyé.'
+redirect: ''

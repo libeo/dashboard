@@ -1,0 +1,9 @@
+_core:
+  default_config_hash: 9f659S4ecavlq2K-SEtlS-vGllyXZq0O-lJyjSVgZAQ
+langcode: fr
+description:
+  type: textfield
+  length: 128
+icon:
+  directory: core/modules/file/icons
+make_unused_managed_files_temporary: false

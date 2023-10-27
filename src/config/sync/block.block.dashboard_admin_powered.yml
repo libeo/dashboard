@@ -1,0 +1,22 @@
+uuid: 71bcf7f5-61ed-4cb7-a4a0-1e65498b3b7e
+langcode: fr
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - dashboard_admin
+_core:
+  default_config_hash: '-jXjIltDSN4XzxJLKPaJyDYA9YC0juRL2bjWaYu3QxY'
+id: dashboard_admin_powered
+theme: dashboard_admin
+region: header
+weight: 0
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Propulsé par Drupal'
+  label_display: '0'
+  provider: system
+visibility: {  }

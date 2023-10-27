@@ -1,0 +1,13 @@
+uuid: null
+langcode: fr
+status: true
+dependencies:
+  enforced:
+    module:
+      - webform
+_core:
+  default_config_hash: JaneQm9648FzHNps3A6x_NoAEElBAceeJQmoDs2ZM3k
+name: 'Webform (Default) - DO NOT EDIT'
+format: webform_default
+weight: 100
+filters: {  }

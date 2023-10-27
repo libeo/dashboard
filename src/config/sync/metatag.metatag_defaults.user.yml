@@ -1,0 +1,12 @@
+uuid: 92a5a6a1-408e-49cc-b640-880c286445be
+langcode: fr
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: gMlQXQBrXVS6Zh7xVyLP3wlYEfMvytpIzTS4uDLtyBU
+id: user
+label: Utilisateur
+tags:
+  canonical_url: '[user:url]'
+  description: '[site:name]'
+  title: '[user:display-name] | [site:name]'

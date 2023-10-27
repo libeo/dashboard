@@ -1,0 +1,22 @@
+uuid: ed9befe1-2951-4dba-8059-24353ec3d538
+langcode: fr
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - dashboard_admin
+_core:
+  default_config_hash: Ak1lDFqsmz9fOQisOgJvrCZvdfwLphGBddGeaHoGySI
+id: dashboard_admin_messages
+theme: dashboard_admin
+region: highlighted
+weight: -5
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Messages de statut'
+  label_display: '0'
+  provider: system
+visibility: {  }
