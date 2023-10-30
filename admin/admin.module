@@ -1,0 +1,136 @@
+<?php
+
+/**
+ * @file
+ * Admin features module.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\node\NodeTypeInterface;
+use Drupal\Core\Url;
+use Drupal\node\Entity\NodeType;
+
+/**
+ * Implements hook_theme().
+ */
+function admin_theme() {
+  return [
+    'admin_dashboard' => [
+      'variables' => [
+        'items_content' => NULL,
+        'items_medias' => NULL,
+        'items_others' => NULL,
+        'roles_defined' => NULL,
+      ],
+      'template' => 'dashboard',
+      'render element' => 'children',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_toolbar().
+ */
+function admin_toolbar() {
+  $current_user = \Drupal::currentUser();
+  // Create the dashboard toolbar render array.
+  $items = [];
+  if ($current_user->hasPermission('access content overview')) {
+    $items['dashboard'] = [
+      '#type' => 'toolbar_item',
+      'tab' => [
+        '#type' => 'link',
+        '#title' => t('Tableau de bord'),
+        '#options' => [
+          'set_active_class' => TRUE,
+        ],
+        '#url' => Url::fromRoute('admin.dashboard'),
+        '#attributes' => [
+          'title' => t('Tableau de bord'),
+          'class' => ['toolbar-icon', 'toolbar-icon-admin'],
+        ],
+      ],
+      '#weight' => -99,
+      '#attached' => [
+        'library' => [
+          'admin/admin.icons',
+        ],
+      ],
+    ];
+  }
+
+  return $items;
+}
+
+/**
+ * Implements hook_preprocess_menu_local_action().
+ *
+ * Override link and title of the "add content" button.
+ */
+function admin_preprocess_menu_local_action(&$variables) {
+  // Checking the current view route.
+  $route_match = \Drupal::routeMatch()->getRouteName();
+  if ($route_match !== 'system.admin_content') {
+    return;
+  }
+
+  $node_type = \Drupal::request()->query->get('type');
+  if (!$node_type) {
+    return;
+  }
+
+  $nodeType = NodeType::load($node_type);
+  if ($nodeType instanceof NodeTypeInterface) {
+    $node_type_label = $nodeType->label();
+  }
+  else {
+    $node_type_label = t('content');
+  }
+
+  // Add this check for the "article" node type.
+  if ($node_type === 'article') {
+    $node_type_label = t('Article');
+  }
+
+  $link = $variables['element']['#link'];
+  $link['localized_options']['attributes']['class'][] = 'button button--action button--primary';
+  $link['localized_options']['set_active_class'] = TRUE;
+  $url = Url::fromRoute('node.add', ['node_type' => $node_type]);
+  $variables['link'] = [
+    '#type' => 'link',
+    '#title' => t('Ajouter un(e)') . ' ' . $node_type_label,
+    '#options' => $link['localized_options'],
+    '#url' => $url,
+  ];
+
+  // Disable caching for this link.
+  $variables['link']['#cache']['max-age'] = 0;
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function admin_form_user_login_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // Add a custom submission handler.
+  $form['#submit'][] = 'admin_user_login_redirect';
+}
+
+/**
+ * Custom submit handler to redirect specific roles.
+ */
+function admin_user_login_redirect($form, FormStateInterface $form_state) {
+  // Retrieve the currently logging in user.
+  $account = \Drupal::currentUser();
+
+  // Get the roles of the user.
+  $user_roles = $account->getRoles();
+
+  // Roles that should be redirected.
+  $roles_to_redirect = ['administrator', 'gestionnaire', 'administrateur_institution'];
+
+  // Check if any of the user's roles are in the list of roles to redirect.
+  if (array_intersect($user_roles, $roles_to_redirect)) {
+    // Set the redirection to the custom dashboard.
+    $form_state->setRedirect('admin.dashboard');
+  }
+}

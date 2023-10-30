@@ -1,0 +1,7 @@
+# Main theme library.
+global:
+  css:
+    base:
+      assets/css/app.css: {}
+  js:
+    assets/js/admin.js: {}
