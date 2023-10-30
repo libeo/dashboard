@@ -1,5 +1,0 @@
-_core:
-  default_config_hash: HsoAOPKMFAXnSY-H30b1jLLmScUZKy291hYfOjltF58
-langcode: fr
-default_transport: smtp
-override: {  }

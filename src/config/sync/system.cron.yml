@@ -1,7 +1,0 @@
-_core:
-  default_config_hash: au-VtjaAE_G3KrPBceh-L4M0_7u2m31MkGNc26oD9WU
-langcode: fr
-threshold:
-  requirements_warning: 172800
-  requirements_error: 1209600
-logging: 1
