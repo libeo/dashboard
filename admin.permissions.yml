@@ -1,7 +1,3 @@
-administer custom site settings:
-  title: 'Administer website Settings'
-  description: 'Administer the website settings like my home banner, contact page...'
-
 access admin dashboard:
   title: 'Access admin dashboard'
   description: 'Access the custom admin dashboard.'
