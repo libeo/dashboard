@@ -22,8 +22,7 @@
   },
   "extra": {
     "installer-paths": {
-      "web/modules/contrib/{$name}": ["type:drupal-module"],
-      "web/themes/contrib/{$name}": ["type:drupal-theme"]
+      "web/modules/contrib/{$name}": ["type:drupal-module"]
     }
   },
   "autoload": {
