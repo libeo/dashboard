@@ -9,5 +9,4 @@ dashboard:
   css:
     theme:
       assets/css/dashboard.css: {}
-  js:
-    assets/js/dashboard.js: {}
+
