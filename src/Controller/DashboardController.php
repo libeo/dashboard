@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\admin\Controller;
+namespace Drupal\dashboard_admin\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
@@ -48,7 +48,7 @@ class DashboardController extends ControllerBase implements ContainerInjectionIn
       '#items_medias' => $this->menuOfMedias(),
       '#items_others' => $this->menuOfOthers(),
       '#attached' => [
-        'library' => ['admin/dashboard'],
+        'library' => ['dashboard_admin/dashboard'],
       ],
     ];
   }
@@ -150,15 +150,15 @@ class DashboardController extends ControllerBase implements ContainerInjectionIn
       $others[] = [
         'title' => $this->t('Taxonomies'),
         'description' => $this->t('Liste des Taxonomies'),
-        'url' => '/admin/structure/taxonomy',
+        'url' => '/dashboard_admin/structure/taxonomy',
       ];
     }
 
-    if ($this->currentUser->hasPermission('administer Dashboard settings')) {
+    if ($this->currentUser->hasPermission('access dashboard_admin dashboard')) {
       $others[] = [
         'title' => $this->t('Paramètres du site'),
-        'description' => $this->t('Paramètres de base du site : page de contact, bannière de la page d\'accueil en mode connecté...'),
-        'url' => Url::fromRoute('admin.settings')->toString(),
+        'description' => $this->t('Paramètres de base du site : page de contact, bannière page d\'accueil en mode connecté'),
+        'url' => Url::fromRoute('dashboard_admin.dashboard')->toString(),
       ];
     }
 

@@ -1,4 +1,0 @@
-access admin dashboard:
-  title: 'Access admin dashboard'
-  description: 'Access the custom admin dashboard.'
-  restrict access: FALSE

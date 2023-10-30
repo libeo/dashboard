@@ -1,0 +1,7 @@
+dashboard_admin.dashboard:
+  path: '/dashboard_admin/dashboard'
+  defaults:
+    _controller: '\Drupal\dashboard_admin\Controller\DashboardController::content'
+    _title: 'Tableau de bord'
+  requirements:
+    _role: 'administrator+content_editor+gestionnaire+administrateur_institution'

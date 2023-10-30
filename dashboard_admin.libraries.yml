@@ -1,4 +1,4 @@
-admin.icons:
+dashboard_admin.icons:
   version: VERSION
   css:
     theme:
@@ -9,4 +9,3 @@ dashboard:
   css:
     theme:
       assets/css/dashboard.css: {}
-

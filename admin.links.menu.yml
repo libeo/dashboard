@@ -1,5 +1,0 @@
-admin.settings:
-  title: 'Dashboard settings'
-  description: 'Configure settings'
-  route_name: admin.settings
-  parent: 'system.admin_config_system'

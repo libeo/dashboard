@@ -9,4 +9,4 @@ dependencies:
   - drupal:user
   - drupal:toolbar
 version: '1.0'
-project: 'admin'
+project: 'dashboard_admin'

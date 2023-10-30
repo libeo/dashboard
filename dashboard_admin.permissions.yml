@@ -1,0 +1,4 @@
+access admin dashboard:
+  title: 'Access dashboard_admin dashboard'
+  description: 'Access the custom dashboard_admin dashboard.'
+  restrict access: FALSE

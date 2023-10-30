@@ -13,7 +13,7 @@ use Drupal\node\Entity\NodeType;
 /**
  * Implements hook_theme().
  */
-function admin_theme() {
+function dashboard_admin_theme() {
   return [
     'admin_dashboard' => [
       'variables' => [
@@ -31,7 +31,7 @@ function admin_theme() {
 /**
  * Implements hook_toolbar().
  */
-function admin_toolbar() {
+function dashboard_admin_toolbar() {
   $current_user = \Drupal::currentUser();
   // Create the dashboard toolbar render array.
   $items = [];
@@ -44,16 +44,16 @@ function admin_toolbar() {
         '#options' => [
           'set_active_class' => TRUE,
         ],
-        '#url' => Url::fromRoute('admin.dashboard'),
+        '#url' => Url::fromRoute('dashboard_admin.dashboard'),
         '#attributes' => [
           'title' => t('Tableau de bord'),
-          'class' => ['toolbar-icon', 'toolbar-icon-admin'],
+          'class' => ['toolbar-icon', 'toolbar-icon-dashboard_admin'],
         ],
       ],
       '#weight' => -99,
       '#attached' => [
         'library' => [
-          'admin/admin.icons',
+          'dashboard_admin/dashboard_admin.icons',
         ],
       ],
     ];
@@ -67,7 +67,7 @@ function admin_toolbar() {
  *
  * Override link and title of the "add content" button.
  */
-function admin_preprocess_menu_local_action(&$variables) {
+function dashboard_admin_preprocess_menu_local_action(&$variables) {
   // Checking the current view route.
   $route_match = \Drupal::routeMatch()->getRouteName();
   if ($route_match !== 'system.admin_content') {
@@ -110,15 +110,15 @@ function admin_preprocess_menu_local_action(&$variables) {
 /**
  * Implements hook_form_FORM_ID_alter().
  */
-function admin_form_user_login_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+function dashboard_admin_form_user_login_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   // Add a custom submission handler.
-  $form['#submit'][] = 'admin_user_login_redirect';
+  $form['#submit'][] = 'dashboard_admin_user_login_redirect';
 }
 
 /**
  * Custom submit handler to redirect specific roles.
  */
-function admin_user_login_redirect($form, FormStateInterface $form_state) {
+function dashboard_admin_user_login_redirect($form, FormStateInterface $form_state) {
   // Retrieve the currently logging in user.
   $account = \Drupal::currentUser();
 
@@ -131,6 +131,6 @@ function admin_user_login_redirect($form, FormStateInterface $form_state) {
   // Check if any of the user's roles are in the list of roles to redirect.
   if (array_intersect($user_roles, $roles_to_redirect)) {
     // Set the redirection to the custom dashboard.
-    $form_state->setRedirect('admin.dashboard');
+    $form_state->setRedirect('dashboard_admin.dashboard');
   }
 }
