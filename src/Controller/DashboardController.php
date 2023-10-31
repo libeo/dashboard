@@ -102,17 +102,18 @@ class DashboardController extends ControllerBase implements ContainerInjectionIn
             return $medias;
         }
 
-        $mediaTypes = [
-            'audio' => $this->t('Audio'),
-            'document' => $this->t('Document'),
-            'image' => $this->t('Image'),
-            'remote_video' => $this->t('Remote video'),
-            'video' => $this->t('Video'),
-        ];
+        // Load all media types from the database.
+        $mediaTypes = \Drupal::entityTypeManager()
+            ->getStorage('media_type')
+            ->loadMultiple();
 
-        foreach ($mediaTypes as $machineName => $label) {
+        // Loop through each media type and add to the list of medias.
+        foreach ($mediaTypes as $mediaType) {
+            $label = $mediaType->label();
+            $machineName = $mediaType->id();
+
             $medias[] = [
-                'title' => $label,
+                'title' => $this->t($label),
                 'description' => $this->t('List of @type media items.', ['@type' => strtolower($label)]),
                 'url' => Url::fromRoute('view.media.media_page_list', ['media_type' => $machineName])->toString(),
             ];
@@ -120,6 +121,7 @@ class DashboardController extends ControllerBase implements ContainerInjectionIn
 
         return $medias;
     }
+
 
     /**
      * Get menu of other forms, taxonomies.
