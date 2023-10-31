@@ -14,52 +14,52 @@ use Drupal\node\Entity\NodeType;
  * Implements hook_theme().
  */
 function dashboard_admin_theme() {
-  return [
-    'admin_dashboard' => [
-      'variables' => [
-        'items_content' => NULL,
-        'items_medias' => NULL,
-        'items_others' => NULL,
-        'roles_defined' => NULL,
-      ],
-      'template' => 'dashboard',
-      'render element' => 'children',
-    ],
-  ];
+    return [
+        'admin_dashboard' => [
+            'variables' => [
+                'items_content' => NULL,
+                'items_medias' => NULL,
+                'items_others' => NULL,
+                'roles_defined' => NULL,
+            ],
+            'template' => 'dashboard',
+            'render element' => 'children',
+        ],
+    ];
 }
 
 /**
  * Implements hook_toolbar().
  */
 function dashboard_admin_toolbar() {
-  $current_user = \Drupal::currentUser();
-  // Create the dashboard toolbar render array.
-  $items = [];
-  if ($current_user->hasPermission('access content overview')) {
-    $items['dashboard'] = [
-      '#type' => 'toolbar_item',
-      'tab' => [
-        '#type' => 'link',
-        '#title' => t('Tableau de bord'),
-        '#options' => [
-          'set_active_class' => TRUE,
-        ],
-        '#url' => Url::fromRoute('dashboard_admin.dashboard'),
-        '#attributes' => [
-          'title' => t('Tableau de bord'),
-          'class' => ['toolbar-icon', 'toolbar-icon-dashboard_admin'],
-        ],
-      ],
-      '#weight' => -99,
-      '#attached' => [
-        'library' => [
-          'dashboard_admin/dashboard_admin.icons',
-        ],
-      ],
-    ];
-  }
+    $current_user = \Drupal::currentUser();
+    // Create the dashboard toolbar render array.
+    $items = [];
+    if ($current_user->hasPermission('access content overview')) {
+        $items['dashboard'] = [
+            '#type' => 'toolbar_item',
+            'tab' => [
+                '#type' => 'link',
+                '#title' => t('Tableau de bord'),
+                '#options' => [
+                    'set_active_class' => TRUE,
+                ],
+                '#url' => Url::fromRoute('dashboard_admin.dashboard'),
+                '#attributes' => [
+                    'title' => t('Tableau de bord'),
+                    'class' => ['toolbar-icon', 'toolbar-icon-dashboard_admin'],
+                ],
+            ],
+            '#weight' => -99,
+            '#attached' => [
+                'library' => [
+                    'dashboard_admin/dashboard_admin.icons',
+                ],
+            ],
+        ];
+    }
 
-  return $items;
+    return $items;
 }
 
 /**
@@ -68,69 +68,67 @@ function dashboard_admin_toolbar() {
  * Override link and title of the "add content" button.
  */
 function dashboard_admin_preprocess_menu_local_action(&$variables) {
-  // Checking the current view route.
-  $route_match = \Drupal::routeMatch()->getRouteName();
-  if ($route_match !== 'system.admin_content') {
-    return;
-  }
+    // Checking the current view route.
+    $route_match = \Drupal::routeMatch()->getRouteName();
+    if ($route_match !== 'system.admin_content') {
+        return;
+    }
 
-  $node_type = \Drupal::request()->query->get('type');
-  if (!$node_type) {
-    return;
-  }
+    $node_type = \Drupal::request()->query->get('type');
+    if (!$node_type) {
+        return;
+    }
 
-  $nodeType = NodeType::load($node_type);
-  if ($nodeType instanceof NodeTypeInterface) {
-    $node_type_label = $nodeType->label();
-  }
-  else {
-    $node_type_label = t('content');
-  }
+    $nodeType = NodeType::load($node_type);
+    if ($nodeType instanceof NodeTypeInterface) {
+        $node_type_label = $nodeType->label();
+    }
+    else {
+        $node_type_label = t('content');
+    }
 
-  // Add this check for the "article" node type.
-  if ($node_type === 'article') {
-    $node_type_label = t('Article');
-  }
+    // Add this check for the "article" node type.
+    if ($node_type === 'article') {
+        $node_type_label = t('Article');
+    }
 
-  $link = $variables['element']['#link'];
-  $link['localized_options']['attributes']['class'][] = 'button button--action button--primary';
-  $link['localized_options']['set_active_class'] = TRUE;
-  $url = Url::fromRoute('node.add', ['node_type' => $node_type]);
-  $variables['link'] = [
-    '#type' => 'link',
-    '#title' => t('Ajouter un(e)') . ' ' . $node_type_label,
-    '#options' => $link['localized_options'],
-    '#url' => $url,
-  ];
+    $current_user = \Drupal::currentUser();
+    if ($current_user->hasPermission('access admin dashboard')) {
+        $link = $variables['element']['#link'];
+        $link['localized_options']['attributes']['class'][] = 'button button--action button--primary';
+        $link['localized_options']['set_active_class'] = TRUE;
+        $url = Url::fromRoute('node.add', ['node_type' => $node_type]);
+        $variables['link'] = [
+            '#type' => 'link',
+            '#title' => t('Ajouter un(e)') . ' ' . $node_type_label,
+            '#options' => $link['localized_options'],
+            '#url' => $url,
+        ];
 
-  // Disable caching for this link.
-  $variables['link']['#cache']['max-age'] = 0;
+        // Disable caching for this link.
+        $variables['link']['#cache']['max-age'] = 0;
+    }
 }
+
 
 /**
  * Implements hook_form_FORM_ID_alter().
  */
 function dashboard_admin_form_user_login_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  // Add a custom submission handler.
-  $form['#submit'][] = 'dashboard_admin_user_login_redirect';
+    // Add a custom submission handler.
+    $form['#submit'][] = 'dashboard_admin_user_login_redirect';
 }
 
 /**
  * Custom submit handler to redirect specific roles.
  */
 function dashboard_admin_user_login_redirect($form, FormStateInterface $form_state) {
-  // Retrieve the currently logging in user.
-  $account = \Drupal::currentUser();
+    // Retrieve the currently logging in user.
+    $account = \Drupal::currentUser();
 
-  // Get the roles of the user.
-  $user_roles = $account->getRoles();
-
-  // Roles that should be redirected.
-  $roles_to_redirect = ['administrator', 'gestionnaire', 'administrateur_institution'];
-
-  // Check if any of the user's roles are in the list of roles to redirect.
-  if (array_intersect($user_roles, $roles_to_redirect)) {
-    // Set the redirection to the custom dashboard.
-    $form_state->setRedirect('dashboard_admin.dashboard');
-  }
+    // Check if the user has the permission to access admin dashboard.
+    if ($account->hasPermission('access admin dashboard')) {
+        // Set the redirection to the custom dashboard.
+        $form_state->setRedirect('dashboard_admin.dashboard');
+    }
 }

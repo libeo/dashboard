@@ -2,6 +2,7 @@
   "name": "libeo/dashboard",
   "description": "Dashboard with admin module and dashboard_admin theme for Drupal 9 and 10",
   "type": "project",
+  "license": "AGPL-3.0",
   "authors": [
     {
       "name": "Libeo",

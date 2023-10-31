@@ -2,3 +2,7 @@ access admin dashboard:
   title: 'Access dashboard_admin dashboard'
   description: 'Access the custom dashboard_admin dashboard.'
   restrict access: FALSE
+
+'administer custom site settings':
+  title: 'Administer custom site settings'
+  description: 'Allow users to administer custom site settings.'

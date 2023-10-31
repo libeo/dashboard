@@ -4,4 +4,4 @@ dashboard_admin.dashboard:
     _controller: '\Drupal\dashboard_admin\Controller\DashboardController::content'
     _title: 'Tableau de bord'
   requirements:
-    _role: 'administrator+content_editor+gestionnaire+administrateur_institution'
+    _permission: 'access admin dashboard'
