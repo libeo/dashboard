@@ -110,3 +110,12 @@
 .dashboard__bottom .button.expanded .label-less {
   display: inline-block;
 }
+
+/**
+ * Toolbar tab icon.
+ */
+.toolbar-bar .toolbar-icon-admin:before,
+.toolbar-bar .toolbar-icon-admin:active:before,
+.toolbar-bar .toolbar-icon-admin.active:before {
+  background-image: url(../images/admin.svg);
+}
