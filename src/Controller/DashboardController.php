@@ -132,16 +132,16 @@ class DashboardController extends ControllerBase implements ContainerInjectionIn
 
         if ($this->currentUser->hasPermission('access user profiles')) {
             $others[] = [
-                'title' => $this->t('Utilisateurs'),
-                'description' => $this->t('Liste des utilisateurs'),
+                'title' => $this->t('Users'),
+                'description' => $this->t('User list'),
                 'url' => Url::fromRoute('view.user_admin_people.page_1')->toString(),
             ];
         }
 
         if ($this->currentUser->hasPermission('access webform overview')) {
             $others[] = [
-                'title' => $this->t('Formulaires'),
-                'description' => $this->t('Liste des formulaires et des soumissions'),
+                'title' => $this->t('Forms'),
+                'description' => $this->t('List of forms and submissions'),
                 'url' => Url::fromRoute('entity.webform.collection')->toString(),
             ];
         }
@@ -149,15 +149,15 @@ class DashboardController extends ControllerBase implements ContainerInjectionIn
         if ($this->currentUser->hasPermission('access taxonomy overview')) {
             $others[] = [
                 'title' => $this->t('Taxonomies'),
-                'description' => $this->t('Liste des Taxonomies'),
+                'description' => $this->t('List of taxonomies'),
                 'url' => '/dashboard_admin/structure/taxonomy',
             ];
         }
 
         if ($this->currentUser->hasPermission('access dashboard_admin dashboard')) {
             $others[] = [
-                'title' => $this->t('Paramètres du site'),
-                'description' => $this->t('Paramètres de base du site : page de contact, bannière page d\'accueil en mode connecté'),
+                'title' => $this->t('Site settings'),
+                'description' => $this->t('Basic site settings: contact page, homepage banner in logged-in mode'),
                 'url' => Url::fromRoute('dashboard_admin.dashboard')->toString(),
             ];
         }
