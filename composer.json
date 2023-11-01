@@ -25,11 +25,5 @@
     "installer-paths": {
       "web/modules/contrib/{$name}": ["type:drupal-module"]
     }
-  },
-  "autoload": {
-    "psr-4": {
-      "Drupal\\admin\\": "admin/src/"
-    }
   }
 }
-
