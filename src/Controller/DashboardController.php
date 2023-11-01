@@ -155,7 +155,7 @@ class DashboardController extends ControllerBase implements ContainerInjectionIn
       $others[] = [
         'title' => $this->t('Taxonomies'),
         'description' => $this->t('List of taxonomies'),
-        'url' => '/dashboard_admin/structure/taxonomy',
+        'url' => '/admin/structure/taxonomy',
       ];
     }
 
