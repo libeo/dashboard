@@ -116,8 +116,8 @@ class DashboardController extends ControllerBase implements ContainerInjectionIn
       $medias[] = [
         'title' => $this->t($label),
         'description' => $this->t('List of @type media items.', ['@type' => strtolower($label)]),
-        'url' => Url::fromUri('internal:/admin/content/media', ['query' => ['type' => $machineName]])->toString(),
-        'add_url' => Url::fromUri('internal:/media/add/' . $machineName)->toString(),
+        'url' => Url::fromRoute('entity.media.collection', [], ['query' => ['type' => $machineName]])->toString(),
+        'add_url' => Url::fromRoute('entity.media.add_form', ['media_type' => $machineName])->toString(),
       ];
 
     }
@@ -155,15 +155,15 @@ class DashboardController extends ControllerBase implements ContainerInjectionIn
       $others[] = [
         'title' => $this->t('Taxonomies'),
         'description' => $this->t('List of taxonomies'),
-        'url' => '/admin/structure/taxonomy',
+        'url' => Url::fromRoute('entity.taxonomy_vocabulary.collection')->toString(),
       ];
     }
 
     if ($this->currentUser->hasPermission('access dashboard_admin dashboard')) {
       $others[] = [
         'title' => $this->t('Site settings'),
-          'description' => $this->t('Configuration'),
-          'url' => '/admin/config',
+        'description' => $this->t('Configuration'),
+        'url' => Url::fromRoute('system.admin_config')->toString(),
       ];
     }
 
