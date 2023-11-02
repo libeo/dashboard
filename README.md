@@ -41,6 +41,6 @@ This section lists links to different configuration and administration pages of 
 
 - List of users: Access the list of registered users on your site.
 - List of webforms: Access the list of forms and their submissions.
-- Site settings: Access the basic settings of the site, such as the contact page, the homepage banner in connected mode, etc.
+- Site settings: Access Configuration page.
 
 Each link in the "Content", "Media", and "Configuration" sections is dynamically generated based on the permissions of the connected user. Make sure the permissions are correctly configured for each user role on your site.
