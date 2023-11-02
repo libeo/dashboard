@@ -162,8 +162,8 @@ class DashboardController extends ControllerBase implements ContainerInjectionIn
     if ($this->currentUser->hasPermission('access dashboard_admin dashboard')) {
       $others[] = [
         'title' => $this->t('Site settings'),
-        'description' => $this->t('Basic site settings: contact page, homepage banner in logged-in mode'),
-        'url' => Url::fromRoute('dashboard_admin.dashboard')->toString(),
+          'description' => $this->t('Configuration'),
+          'url' => '/admin/config',
       ];
     }
 
